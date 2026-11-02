@@ -1,30 +1,25 @@
 {
   "name": "liberusoftware/module-liberu-business-workflow-reconciliation",
-  "description": "Cross-product workflow run registry and recovery-safe reconciliation.",
+  "version": "1.5.0",
   "type": "liberu-module",
+  "description": "Liberu liberu-business-workflow-reconciliation module.",
   "license": "MIT",
   "require": {
     "php": "^8.5",
     "illuminate/database": "^13.38.0",
-    "illuminate/support": "^13.38.0",
-    "liberusoftware/module-manager": "^1.0"
+    "illuminate/events": "^13.38.0",
+    "illuminate/support": "^13.38.0"
   },
   "autoload": {
     "psr-4": {
-      "Liberu\\BusinessWorkflowReconciliation\\": "src/"
+      "Liberu\\Platform\\BusinessWorkflowReconciliation\\": "src/"
     }
   },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Liberu\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"
-      ]
-    },
-    "liberu": {
-      "name": "liberu-business-workflow-reconciliation"
+  "autoload-dev": {
+    "psr-4": {
+      "Liberu\\Platform\\BusinessWorkflowReconciliation\\Tests\\": "tests/"
     }
   },
-  "version": "1.4.0",
   "require-dev": {
     "liberusoftware/package-testbench": "^1.5",
     "pestphp/pest": "^5.3.3"
@@ -35,6 +30,12 @@
   "config": {
     "allow-plugins": {
       "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "liberu-business-workflow-reconciliation",
+      "provider": "Liberu\\Platform\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"
     }
   }
 }
